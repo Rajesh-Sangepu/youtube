@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: notifications
-  namespace: argocd
+  namespace: test-argo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
