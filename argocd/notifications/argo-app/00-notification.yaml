@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: system-utils
+  project: default
   source:
     repoURL: 'https://github.com/Rajesh-Sangepu/youtube.git'
     path: argocd/notifications/manifests
