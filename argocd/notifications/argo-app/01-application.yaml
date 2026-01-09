@@ -2,15 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: application
-  namespace: argocd
+  namespace: test-argo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    notifications.argoproj.io/subscribe.on-sync-succeeded.kryukovbiz: "-1001716159312"
+    notifications.argoproj.io/subscribe.on-sync-succeeded.my_server: rajesh.sangepu@opsmx.io
+    notifications.argoproj.io/subscribe.on-sync-failed.my_server: rajesh.sangepu@opsmx.io
 spec:
-  project: application
+  project: default
   source:
-    repoURL: 'https://github.com/BigKAA/youtube'
+    repoURL: 'https://github.com/Rajesh-Sangepu/youtube.git'
     path: argocd/notifications/manifests/app
     targetRevision: master
   destination:
