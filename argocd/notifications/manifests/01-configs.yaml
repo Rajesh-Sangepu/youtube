@@ -5,7 +5,7 @@ metadata:
   name: argocd-notifications-cm
 data:
   context: |
-    argocdUrl: http://argocd.kryukov.local
+    argocdUrl: https://test-argo.ssdint.opsmx.org
   template.app-created: |
     email:
       subject: Application {{.app.metadata.name}} has been created.
@@ -516,11 +516,11 @@ data:
       send:
       - app-sync-succeeded
       when: app.status.operationState.phase in ['Succeeded']
-  service.telegram.kryukovbiz: |
-    token: $telegram-token
-#  service.email.my_server: |
-#    username: $email-username
-#    password: $email-password
-#    host: mail.any.com
-#    port: 587
-#    from: artur@my_server.com
+#  service.telegram.kryukovbiz: |
+#   token: $telegram-token
+  service.email.my_server: |
+    username: $email-username
+    password: $email-password
+    host: smtp.gmail.com
+    port: 587
+    from: rajesh.sangepu@opsmx.io
